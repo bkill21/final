@@ -1,0 +1,16 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h3>{{ user.username }}'s Songs</h3>
+
+{% for song in user.songs %}
+<h5>{{ song.song_name }} - {{ song.song_artist }}</h5>
+<form action="post" target="_blank">
+    <input class="play_song" onClick="playSong()" type="submit" value="Play Song">
+  <p>---</p>
+  <small>Song ID: {{ song.song_id }} | </small>
+  <small>Currated By User #: {{ song.user_id }} | </small>
+  <small>Curration Date: {{ song.creation_date }}</small>
+  <p>================================================</p>
+  {% endfor %}
+  {% endblock %}

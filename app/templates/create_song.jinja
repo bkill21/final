@@ -1,0 +1,17 @@
+{% extends "base.jinja" %}
+
+{% block content  %}
+<form action="" method="post">
+ <h2>Currate a new song and add it to your feed</h2>
+ {{ form.hidden_tag() }}
+ <p>
+    {{ form.song.label }}<br>
+    {{ form.song(size=32) }}
+ </p>
+ <p>
+    {{ form.artist.label }}<br>
+    {{ form.artist(size=32) }}
+ </p>
+ <p>{{ form.submit() }}</p>
+</form>
+{% endblock  %}
